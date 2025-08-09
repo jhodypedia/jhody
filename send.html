@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Send - WA Panel</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet">
+<link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="brand"><div class="logo">WA</div><div><strong>Jowa Panel</strong></div></div>
+    <nav class="nav">
+      <a href="dashboard.html"><i class="fa-solid fa-house"></i> Overview</a>
+      <a href="send.html" class="active"><i class="fa-solid fa-paper-plane"></i> Send</a>
+      <a href="broadcast.html"><i class="fa-solid fa-bullhorn"></i> Broadcast</a>
+    </nav>
+  </aside>
+
+  <main>
+    <div class="header"><div class="title">Send Message</div><div class="meta small">Send to a single number</div></div>
+
+    <div id="sendRoot" class="card">
+      <form id="sendForm">
+        <div class="form-row">
+          <input id="sendTo" class="form-control" placeholder="Target (628... or jid)" />
+        </div>
+        <div class="form-row">
+          <textarea id="sendText" class="form-control" rows="6" placeholder="Message"></textarea>
+        </div>
+        <div class="d-flex gap-2">
+          <button class="btn btn-success">Send</button>
+          <button type="reset" class="btn btn-outline-secondary">Reset</button>
+        </div>
+      </form>
+    </div>
+  </main>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
