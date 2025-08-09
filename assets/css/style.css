@@ -1,0 +1,116 @@
+/* Advanced responsive UI for WA Panel */
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+:root{
+  --bg:#f5f7fb;
+  --card:#ffffff;
+  --muted:#6b7280;
+  --accent:#0ea5a3;
+  --primary:#0b5ed7;
+  --danger:#dc3545;
+  --glass: rgba(255,255,255,0.6);
+  --radius:12px;
+  --shadow: 0 8px 30px rgba(2,6,23,0.06);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg,#f8fafc 0%, #eef2f7 100%);
+  color: #0f172a;
+  margin:0;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* layout */
+.app {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 24px;
+  max-width: 1300px;
+  margin: 28px auto;
+  padding: 20px;
+}
+
+/* sidebar */
+.sidebar {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 18px;
+  box-shadow: var(--shadow);
+  height: calc(100vh - 56px);
+  position: sticky;
+  top: 28px;
+  overflow:auto;
+}
+.brand { display:flex; gap:12px; align-items:center; margin-bottom:8px; }
+.brand .logo { width:42px; height:42px; background:linear-gradient(135deg,var(--primary),var(--accent)); border-radius:10px; display:flex; align-items:center; justify-content:center; color:#fff; font-weight:700; }
+.nav { margin-top:14px; display:flex; flex-direction:column; gap:6px; }
+.nav a {
+  display:flex; gap:10px; align-items:center;
+  padding:10px 12px; border-radius:10px; color: #0f172a; text-decoration:none;
+  transition: all .14s ease;
+}
+.nav a:hover { background:#f1f5f9; transform: translateY(-1px); box-shadow: 0 6px 18px rgba(2,6,23,0.03); }
+.nav a.active { background: linear-gradient(90deg, rgba(11,94,215,0.12), rgba(14,165,163,0.06)); border-left:3px solid var(--primary); padding-left:10px; }
+
+/* header area */
+.header {
+  display:flex; justify-content:space-between; align-items:center; gap:12px;
+  margin-bottom:18px;
+}
+.header .title { font-weight:700; font-size:20px; }
+.header .meta { color:var(--muted); font-size:13px }
+
+/* content cards */
+.grid {
+  display:grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap:16px;
+}
+.card {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: var(--shadow);
+}
+
+/* single column */
+.full { grid-column: 1 / -1; }
+
+/* QR box */
+.qr-box {
+  display:flex; align-items:center; justify-content:center;
+  min-height: 280px; background: linear-gradient(180deg,#fbfdff, #fff);
+  border-radius:10px; border:1px solid #eef2f6; padding:10px;
+}
+.qr-box img { max-width:100%; max-height:100%; border-radius:8px; }
+
+/* forms */
+.form-row { display:flex; gap:10px; align-items:center; margin-bottom:10px; }
+.form-row .form-control { flex:1; min-width:0; }
+
+/* small helpers */
+.small { font-size:13px; color:var(--muted) }
+.btn-outline-ghost { background:transparent; border:1px solid #e6eef7; color:var(--muted); }
+
+/* table */
+.table-wrapper { overflow:auto; max-height:420px; }
+.table thead th { position:sticky; top:0; background:#fff }
+
+/* responsive */
+@media (max-width: 1000px) {
+  .app { grid-template-columns: 1fr; padding:12px; max-width:1000px; }
+  .sidebar { position:relative; height:auto; order:2; }
+  .grid { grid-template-columns: 1fr; }
+}
+
+/* fullscreen modal-like card for payments */
+.payment-modal {
+  display:flex; flex-direction:column; gap:10px; align-items:center; justify-content:center;
+}
+
+/* footer */
+.footer { text-align:center; color:var(--muted); font-size:13px; margin-top:18px; }
